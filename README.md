@@ -7,6 +7,14 @@ The Certified Kubernetes Administrator (CKA) certification is a popular certific
 
 To prepare for the CKA certification exam, it is important to study the exam topics in depth. Here are some study materials and resources that can help you prepare for the exam:
 
+## Troubleshooting
+
+- [Check my troubleshoot page](troubleshoot.md)
+
+## How to get External IP for app
+
+- [Code snippet for ext IP for service](get_ext_ip_svc.py)
+
 ## Exam Overview
 
 - [CKA Exam Overview](https://www.cncf.io/certification/cka/): A detailed overview of the CKA certification exam, including exam format and topics.
