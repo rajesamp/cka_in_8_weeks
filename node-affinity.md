@@ -13,6 +13,15 @@ Also, have that same pod prefer to be scheduled to a node with the label availab
 NOTE: Make sure the container remains in a running state
 Ensure that the pod is scheduled to the controlplane node.
 ```
+# yaml file
+https://github.com/rajesh-sampathrajan/cka_in_8_weeks/blob/main/node-aff.yaml
+
+Once yaml is manufactured and before deploying; add labels to the node
+
+```
+kubectl label nodes controlplane node-role.kubernetes.io/controlplane=true
+
+```
 
 [![asciicast](https://asciinema.org/a/3R3MLOVd7GnnXe7cP6ghBrAin.svg)](https://asciinema.org/a/3R3MLOVd7GnnXe7cP6ghBrAin)
 
