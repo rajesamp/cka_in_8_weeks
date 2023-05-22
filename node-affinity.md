@@ -15,8 +15,8 @@ Ensure that the pod is scheduled to the controlplane node.
 ```
 # yaml file
 https://github.com/rajesh-sampathrajan/cka_in_8_weeks/blob/main/node-aff.yaml
-
-Once yaml is manufactured and before deploying; add labels to the node
+ * Added toleration on controlplane in the yaml.
+ * Once yaml is manufactured and before deploying; add labels to the node
 
 ```
 kubectl label nodes controlplane node-role.kubernetes.io/controlplane=true
