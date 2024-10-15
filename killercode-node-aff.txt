@@ -1,4 +1,4 @@
-#challenge: katacode: Apply node affinity to the pod
+#challenge: killercoda: Apply node affinity to the pod
 
 steps performed:
 kubectl config set-context --current --namespace=012963bd
