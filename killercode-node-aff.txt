@@ -1,0 +1,44 @@
+#challenge: katacode: Apply node affinity to the pod
+
+steps performed:
+kubectl config set-context --current --namespace=012963bd
+kubectl create namespace 012963bd
+#vi nodeaff.yaml
+k apply -f nodeaff.yaml 
+kubectl get pods -n 012963bd
+#validation:
+kubectl get pod az1-pod -n 012963bd -o wide
+
+#nodeaff.yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  namespace: 012963bd
+  name: az1-pod
+spec:
+  containers:
+  - name: nginx
+    image: nginx:1.24.0
+    ports:
+    - containerPort: 80
+  affinity:
+    nodeAffinity:
+      preferredDuringSchedulingIgnoredDuringExecution:
+        - weight: 80
+          preference:
+            matchExpressions:
+            - key: availability-zone
+              operator: In
+              values:
+              - zone1
+        - weight: 20
+          preference:
+            matchExpressions:
+            - key: availability-zone
+              operator: In
+              values:
+              - zone2
+  nodeName: controlplane
+  restartPolicy: Always
+
+
